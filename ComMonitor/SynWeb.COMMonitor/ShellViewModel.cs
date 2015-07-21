@@ -178,5 +178,10 @@ namespace SynWeb.COMMonitor
                 NotifyOfPropertyChange(() => AnswerIfDiffers);
             }
         }
+
+        public void Disconnect()
+        {
+            ((App) Application.Current).Disconnect();
+        }
     }
 }

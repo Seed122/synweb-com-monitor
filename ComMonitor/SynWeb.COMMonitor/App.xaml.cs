@@ -23,13 +23,7 @@ namespace SynWeb.COMMonitor
 
         public void ConnectToCOMPort(string port)
         {
-            if (_comPort != null)
-            {
-                var name = _comPort.PortName;
-                _comPort.Dispose();
-                _comPort = null;
-                COMDisconnected(name);
-            }
+            Disconnect();
             _comPort = new COMPort(port);
             _comPort.MessageReceived += COMMessageReceived;
             _comPort.StartListening();
@@ -51,6 +45,18 @@ namespace SynWeb.COMMonitor
                 _comPort.SendCom(msg);
                 COMMessageSent(msg.Trim());
             }
+        }
+
+        public void Disconnect()
+        {
+            if (_comPort == null)
+            {
+                return;
+            }
+            var name = _comPort.PortName;
+            _comPort.Dispose();
+            _comPort = null;
+            COMDisconnected(name);
         }
     }
 }

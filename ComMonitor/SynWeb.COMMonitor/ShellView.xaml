@@ -26,7 +26,12 @@
         <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Orientation="Vertical">
             <TextBlock >COM port:</TextBlock>
             <ComboBox Height="30" VerticalContentAlignment="Center" FontSize="18" Margin="0,5" x:Name="PortsList" SelectedItem="{Binding SelectedPort}"/>
-            <Button Margin="0,5" Width="100" Height="30" x:Name="ConnectToCOMPort">Start listening</Button>
+            <StackPanel Orientation="Horizontal" Margin="0,5" HorizontalAlignment="Center">
+                <Button Margin="5,0" Width="100" Height="30" x:Name="ConnectToCOMPort">Start listening</Button>
+                <Button Margin="5,0" Width="100" Height="30" x:Name="Disconnect">Disconnect</Button>
+                
+            </StackPanel>
+            
         </StackPanel>
 
         <StackPanel Margin="5" Grid.Row="1" Grid.Column="0">
