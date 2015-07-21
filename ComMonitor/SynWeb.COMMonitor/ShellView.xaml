@@ -24,13 +24,13 @@
 
 
         <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Orientation="Vertical">
-            <TextBlock >COM-порт:</TextBlock>
+            <TextBlock >COM port:</TextBlock>
             <ComboBox Height="30" VerticalContentAlignment="Center" FontSize="18" Margin="0,5" x:Name="PortsList" SelectedItem="{Binding SelectedPort}"/>
-            <Button Margin="0,5" Width="100" Height="30" x:Name="ConnectToCOMPort">Подключиться</Button>
+            <Button Margin="0,5" Width="100" Height="30" x:Name="ConnectToCOMPort">Start listening</Button>
         </StackPanel>
 
         <StackPanel Margin="5" Grid.Row="1" Grid.Column="0">
-            <TextBlock>Ожидаемая строка:</TextBlock>
+            <TextBlock>Expected string:</TextBlock>
             <TextBox Margin="0,5,0,10" x:Name="ExpectedString"></TextBox>
             <Grid>
                 <Grid.RowDefinitions>
@@ -42,8 +42,8 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0">Ответ при совпадении:</TextBlock>
-                <TextBlock Margin="10,0,0,0" Grid.Row="0" Grid.Column="1">Ответ при различии:</TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="0">Answer if equals:</TextBlock>
+                <TextBlock Margin="10,0,0,0" Grid.Row="0" Grid.Column="1">Answer if differs:</TextBlock>
                 <TextBox Margin="0,5,10,10" x:Name="AnswerIfEquals" Grid.Row="1" Grid.Column="0"></TextBox>
                 <TextBox Margin="10,5,0,10" x:Name="AnswerIfDiffers" Grid.Row="1" Grid.Column="1"></TextBox>
             </Grid>
@@ -65,7 +65,7 @@
                 <TextBox x:Name="MessageToSend" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="18" 
                          cal:Message.Attach="[Event KeyDown] = [Action MsgKeyDown($eventArgs)]"
                          Height="30"></TextBox>
-                <Button Focusable="False" x:Name="SendMessage" Width="80" Height="30" Grid.Column="1">Отправить</Button>
+                <Button Focusable="False" x:Name="SendMessage" Width="80" Height="30" Grid.Column="1">Send</Button>
             </Grid>
         </Grid>
     </Grid>

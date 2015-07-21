@@ -117,7 +117,7 @@ namespace SynWeb.COMMonitor
             }
             catch (Exception e)
             {
-                MessageBox.Show("Ошибка при подключении");
+                MessageBox.Show("Error while connecting");
             }
         }
 
